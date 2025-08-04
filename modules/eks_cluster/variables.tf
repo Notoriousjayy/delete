@@ -16,11 +16,12 @@ variable "subnet_ids" {
 }
 
 variable "managed_node_groups" {
-  type = map(object({
-    instance_types = list(string)
-    desired_size   = number
-    min_size       = number
-    max_size       = number
-  }))
+  type = map(any)
   default = {}
+}
+
+// ARN of an already-created EKS cluster IAM role.  Module will **not** create or delete it.
+variable "existing_cluster_iam_role_arn" {
+  type        = string
+  description = "Use an existing IAM role instead of letting the module create one"
 }

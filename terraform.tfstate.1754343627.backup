@@ -1,7 +1,7 @@
 {
   "version": 4,
   "terraform_version": "1.12.2",
-  "serial": 310,
+  "serial": 172,
   "lineage": "9d44b384-6d55-2dbe-17d9-c94345953c73",
   "outputs": {},
   "resources": [
@@ -189,22 +189,22 @@
           "index_key": 0,
           "schema_version": 0,
           "attributes": {
-            "arn": "arn:aws:iam::866934333672:policy/jordan-prod-eks-cluster-ClusterEncryption20250804215544308500000007",
-            "attachment_count": 0,
+            "arn": "arn:aws:iam::866934333672:policy/jordan-prod-eks-cluster-ClusterEncryption20250804203352666100000009",
+            "attachment_count": 1,
             "description": "Cluster encryption policy to allow cluster role to utilize CMK provided",
-            "id": "arn:aws:iam::866934333672:policy/jordan-prod-eks-cluster-ClusterEncryption20250804215544308500000007",
-            "name": "jordan-prod-eks-cluster-ClusterEncryption20250804215544308500000007",
+            "id": "arn:aws:iam::866934333672:policy/jordan-prod-eks-cluster-ClusterEncryption20250804203352666100000009",
+            "name": "jordan-prod-eks-cluster-ClusterEncryption20250804203352666100000009",
             "name_prefix": "jordan-prod-eks-cluster-ClusterEncryption",
             "path": "/",
-            "policy": "{\"Statement\":[{\"Action\":[\"kms:Encrypt\",\"kms:Decrypt\",\"kms:ListGrants\",\"kms:DescribeKey\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:kms:us-east-1:866934333672:key/61a830d2-84a7-40be-973a-f4966ceb6753\"}],\"Version\":\"2012-10-17\"}",
-            "policy_id": "ANPA4TWKQEDUKTZVU73RB",
-            "tags": null,
+            "policy": "{\"Statement\":[{\"Action\":[\"kms:Encrypt\",\"kms:Decrypt\",\"kms:ListGrants\",\"kms:DescribeKey\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:kms:us-east-1:866934333672:key/10034cb8-5fbc-4fc7-9d65-acdd82d133de\"}],\"Version\":\"2012-10-17\"}",
+            "policy_id": "ANPA4TWKQEDUB2EV7I4HI",
+            "tags": {},
             "tags_all": {}
           },
           "sensitive_attributes": [],
           "identity_schema_version": 0,
           "identity": {
-            "arn": "arn:aws:iam::866934333672:policy/jordan-prod-eks-cluster-ClusterEncryption20250804215544308500000007"
+            "arn": "arn:aws:iam::866934333672:policy/jordan-prod-eks-cluster-ClusterEncryption20250804203352666100000009"
           },
           "private": "bnVsbA==",
           "dependencies": [
@@ -258,28 +258,31 @@
           "index_key": 0,
           "schema_version": 0,
           "attributes": {
-            "arn": "arn:aws:iam::866934333672:role/jordan-prod-eks-cluster-20250804215450125400000001",
+            "arn": "arn:aws:iam::866934333672:role/jordan-prod-eks-cluster-20250804203258482000000002",
             "assume_role_policy": "{\"Statement\":[{\"Action\":[\"sts:TagSession\",\"sts:AssumeRole\"],\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"eks.amazonaws.com\"},\"Sid\":\"EKSClusterAssumeRole\"}],\"Version\":\"2012-10-17\"}",
-            "create_date": "2025-08-04T21:54:50Z",
+            "create_date": "2025-08-04T20:32:58Z",
             "description": "",
             "force_detach_policies": true,
-            "id": "jordan-prod-eks-cluster-20250804215450125400000001",
+            "id": "jordan-prod-eks-cluster-20250804203258482000000002",
             "inline_policy": [],
-            "managed_policy_arns": [],
+            "managed_policy_arns": [
+              "arn:aws:iam::866934333672:policy/jordan-prod-eks-cluster-ClusterEncryption20250804203352666100000009",
+              "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+            ],
             "max_session_duration": 3600,
-            "name": "jordan-prod-eks-cluster-20250804215450125400000001",
+            "name": "jordan-prod-eks-cluster-20250804203258482000000002",
             "name_prefix": "jordan-prod-eks-cluster-",
             "path": "/",
             "permissions_boundary": "",
-            "tags": null,
+            "tags": {},
             "tags_all": {},
-            "unique_id": "AROA4TWKQEDUP7O6X6E37"
+            "unique_id": "AROA4TWKQEDUJWBIXSUIG"
           },
           "sensitive_attributes": [],
           "identity_schema_version": 0,
           "identity": {
             "account_id": "866934333672",
-            "name": "jordan-prod-eks-cluster-20250804215450125400000001"
+            "name": "jordan-prod-eks-cluster-20250804203258482000000002"
           },
           "private": "bnVsbA==",
           "dependencies": [
@@ -296,46 +299,6 @@
       "name": "additional",
       "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
       "instances": []
-    },
-    {
-      "module": "module.eks_cluster.module.eks",
-      "mode": "managed",
-      "type": "aws_iam_role_policy_attachment",
-      "name": "cluster_encryption",
-      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
-      "instances": [
-        {
-          "index_key": 0,
-          "schema_version": 0,
-          "attributes": {
-            "id": "jordan-prod-eks-cluster-20250804215450125400000001/arn:aws:iam::866934333672:policy/jordan-prod-eks-cluster-ClusterEncryption20250804215544308500000007",
-            "policy_arn": "arn:aws:iam::866934333672:policy/jordan-prod-eks-cluster-ClusterEncryption20250804215544308500000007",
-            "role": "jordan-prod-eks-cluster-20250804215450125400000001"
-          },
-          "sensitive_attributes": [],
-          "identity_schema_version": 0,
-          "identity": {
-            "account_id": "866934333672",
-            "policy_arn": "arn:aws:iam::866934333672:policy/jordan-prod-eks-cluster-ClusterEncryption20250804215544308500000007",
-            "role": "jordan-prod-eks-cluster-20250804215450125400000001"
-          },
-          "private": "bnVsbA==",
-          "dependencies": [
-            "module.eks_cluster.module.eks.aws_iam_policy.cluster_encryption",
-            "module.eks_cluster.module.eks.aws_iam_role.this",
-            "module.eks_cluster.module.eks.data.aws_caller_identity.current",
-            "module.eks_cluster.module.eks.data.aws_iam_policy_document.assume_role_policy",
-            "module.eks_cluster.module.eks.data.aws_iam_session_context.current",
-            "module.eks_cluster.module.eks.module.kms.aws_kms_external_key.this",
-            "module.eks_cluster.module.eks.module.kms.aws_kms_key.this",
-            "module.eks_cluster.module.eks.module.kms.aws_kms_replica_external_key.this",
-            "module.eks_cluster.module.eks.module.kms.aws_kms_replica_key.this",
-            "module.eks_cluster.module.eks.module.kms.data.aws_caller_identity.current",
-            "module.eks_cluster.module.eks.module.kms.data.aws_iam_policy_document.this",
-            "module.eks_cluster.module.eks.module.kms.data.aws_partition.current"
-          ]
-        }
-      ]
     },
     {
       "module": "module.eks_cluster.module.eks",
@@ -372,16 +335,16 @@
           "index_key": "AmazonEKSClusterPolicy",
           "schema_version": 0,
           "attributes": {
-            "id": "jordan-prod-eks-cluster-20250804215450125400000001/arn:aws:iam::aws:policy/AmazonEKSClusterPolicy",
+            "id": "jordan-prod-eks-cluster-20250804203258482000000002/arn:aws:iam::aws:policy/AmazonEKSClusterPolicy",
             "policy_arn": "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy",
-            "role": "jordan-prod-eks-cluster-20250804215450125400000001"
+            "role": "jordan-prod-eks-cluster-20250804203258482000000002"
           },
           "sensitive_attributes": [],
           "identity_schema_version": 0,
           "identity": {
             "account_id": "866934333672",
             "policy_arn": "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy",
-            "role": "jordan-prod-eks-cluster-20250804215450125400000001"
+            "role": "jordan-prod-eks-cluster-20250804203258482000000002"
           },
           "private": "bnVsbA==",
           "dependencies": [
@@ -404,12 +367,26 @@
           "index_key": 0,
           "schema_version": 1,
           "attributes": {
-            "arn": "arn:aws:ec2:us-east-1:866934333672:security-group/sg-054c27215cd35250a",
+            "arn": "arn:aws:ec2:us-east-1:866934333672:security-group/sg-0870d22b15953be98",
             "description": "EKS cluster security group",
             "egress": [],
-            "id": "sg-054c27215cd35250a",
-            "ingress": [],
-            "name": "jordan-prod-eks-cluster-20250804215502723900000006",
+            "id": "sg-0870d22b15953be98",
+            "ingress": [
+              {
+                "cidr_blocks": [],
+                "description": "Node groups to cluster API",
+                "from_port": 443,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-065f3d55ea50b8aa9"
+                ],
+                "self": false,
+                "to_port": 443
+              }
+            ],
+            "name": "jordan-prod-eks-cluster-20250804211618459800000001",
             "name_prefix": "jordan-prod-eks-cluster-",
             "owner_id": "866934333672",
             "region": "us-east-1",
@@ -421,7 +398,53 @@
               "Name": "jordan-prod-eks-cluster"
             },
             "timeouts": null,
-            "vpc_id": "vpc-019324d436b4fe412"
+            "vpc_id": "vpc-03ce88b4d2b2e5cd8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6OTAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+          "dependencies": [
+            "module.vpc.module.this.aws_vpc.this"
+          ],
+          "create_before_destroy": true
+        },
+        {
+          "index_key": 0,
+          "deposed": "59945eb5",
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:866934333672:security-group/sg-0c9e466f973e4bdbc",
+            "description": "EKS cluster security group",
+            "egress": [],
+            "id": "sg-0c9e466f973e4bdbc",
+            "ingress": [
+              {
+                "cidr_blocks": [],
+                "description": "Node groups to cluster API",
+                "from_port": 443,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-05b0f0f3659ebce06"
+                ],
+                "self": false,
+                "to_port": 443
+              }
+            ],
+            "name": "jordan-prod-eks-cluster-20250804203312012600000007",
+            "name_prefix": "jordan-prod-eks-cluster-",
+            "owner_id": "866934333672",
+            "region": "us-east-1",
+            "revoke_rules_on_delete": false,
+            "tags": {
+              "Name": "jordan-prod-eks-cluster"
+            },
+            "tags_all": {
+              "Name": "jordan-prod-eks-cluster"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0d36eaf30723d6814"
           },
           "sensitive_attributes": [],
           "identity_schema_version": 0,
@@ -444,12 +467,138 @@
           "index_key": 0,
           "schema_version": 1,
           "attributes": {
-            "arn": "arn:aws:ec2:us-east-1:866934333672:security-group/sg-02ba3ee5dd9021d23",
+            "arn": "arn:aws:ec2:us-east-1:866934333672:security-group/sg-065f3d55ea50b8aa9",
             "description": "EKS node shared security group",
-            "egress": [],
-            "id": "sg-02ba3ee5dd9021d23",
-            "ingress": [],
-            "name": "jordan-prod-eks-node-20250804215502085700000003",
+            "egress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "Allow all egress",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              }
+            ],
+            "id": "sg-065f3d55ea50b8aa9",
+            "ingress": [
+              {
+                "cidr_blocks": [],
+                "description": "Cluster API to node 4443/tcp webhook",
+                "from_port": 4443,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-0870d22b15953be98"
+                ],
+                "self": false,
+                "to_port": 4443
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Cluster API to node 6443/tcp webhook",
+                "from_port": 6443,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-0870d22b15953be98"
+                ],
+                "self": false,
+                "to_port": 6443
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Cluster API to node 8443/tcp webhook",
+                "from_port": 8443,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-0870d22b15953be98"
+                ],
+                "self": false,
+                "to_port": 8443
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Cluster API to node 9443/tcp webhook",
+                "from_port": 9443,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-0870d22b15953be98"
+                ],
+                "self": false,
+                "to_port": 9443
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Cluster API to node groups",
+                "from_port": 443,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-0870d22b15953be98"
+                ],
+                "self": false,
+                "to_port": 443
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Cluster API to node kubelets",
+                "from_port": 10250,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-0870d22b15953be98"
+                ],
+                "self": false,
+                "to_port": 10250
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Node to node CoreDNS UDP",
+                "from_port": 53,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "udp",
+                "security_groups": [],
+                "self": true,
+                "to_port": 53
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Node to node CoreDNS",
+                "from_port": 53,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": true,
+                "to_port": 53
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Node to node ingress on ephemeral ports",
+                "from_port": 1025,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": true,
+                "to_port": 65535
+              }
+            ],
+            "name": "jordan-prod-eks-node-20250804211618466200000004",
             "name_prefix": "jordan-prod-eks-node-",
             "owner_id": "866934333672",
             "region": "us-east-1",
@@ -463,7 +612,167 @@
               "kubernetes.io/cluster/jordan-prod-eks": "owned"
             },
             "timeouts": null,
-            "vpc_id": "vpc-019324d436b4fe412"
+            "vpc_id": "vpc-03ce88b4d2b2e5cd8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6OTAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+          "dependencies": [
+            "module.vpc.module.this.aws_vpc.this"
+          ],
+          "create_before_destroy": true
+        },
+        {
+          "index_key": 0,
+          "deposed": "f7562519",
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:866934333672:security-group/sg-05b0f0f3659ebce06",
+            "description": "EKS node shared security group",
+            "egress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "Allow all egress",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              }
+            ],
+            "id": "sg-05b0f0f3659ebce06",
+            "ingress": [
+              {
+                "cidr_blocks": [],
+                "description": "Cluster API to node 4443/tcp webhook",
+                "from_port": 4443,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-0c9e466f973e4bdbc"
+                ],
+                "self": false,
+                "to_port": 4443
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Cluster API to node 6443/tcp webhook",
+                "from_port": 6443,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-0c9e466f973e4bdbc"
+                ],
+                "self": false,
+                "to_port": 6443
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Cluster API to node 8443/tcp webhook",
+                "from_port": 8443,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-0c9e466f973e4bdbc"
+                ],
+                "self": false,
+                "to_port": 8443
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Cluster API to node 9443/tcp webhook",
+                "from_port": 9443,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-0c9e466f973e4bdbc"
+                ],
+                "self": false,
+                "to_port": 9443
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Cluster API to node groups",
+                "from_port": 443,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-0c9e466f973e4bdbc"
+                ],
+                "self": false,
+                "to_port": 443
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Cluster API to node kubelets",
+                "from_port": 10250,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-0c9e466f973e4bdbc"
+                ],
+                "self": false,
+                "to_port": 10250
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Node to node CoreDNS UDP",
+                "from_port": 53,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "udp",
+                "security_groups": [],
+                "self": true,
+                "to_port": 53
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Node to node CoreDNS",
+                "from_port": 53,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": true,
+                "to_port": 53
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Node to node ingress on ephemeral ports",
+                "from_port": 1025,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": true,
+                "to_port": 65535
+              }
+            ],
+            "name": "jordan-prod-eks-node-20250804203312013100000008",
+            "name_prefix": "jordan-prod-eks-node-",
+            "owner_id": "866934333672",
+            "region": "us-east-1",
+            "revoke_rules_on_delete": false,
+            "tags": {
+              "Name": "jordan-prod-eks-node",
+              "kubernetes.io/cluster/jordan-prod-eks": "owned"
+            },
+            "tags_all": {
+              "Name": "jordan-prod-eks-node",
+              "kubernetes.io/cluster/jordan-prod-eks": "owned"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0d36eaf30723d6814"
           },
           "sensitive_attributes": [],
           "identity_schema_version": 0,
@@ -489,15 +798,46 @@
             "cidr_blocks": null,
             "description": "Node groups to cluster API",
             "from_port": 443,
-            "id": "sgrule-1597522813",
+            "id": "sgrule-4164016535",
             "ipv6_cidr_blocks": null,
             "prefix_list_ids": null,
             "protocol": "tcp",
             "region": "us-east-1",
-            "security_group_id": "sg-054c27215cd35250a",
-            "security_group_rule_id": "sgr-0b402fa0b84ac0efb",
+            "security_group_id": "sg-0870d22b15953be98",
+            "security_group_rule_id": "sgr-022cfe788cdbd5c5f",
             "self": false,
-            "source_security_group_id": "sg-02ba3ee5dd9021d23",
+            "source_security_group_id": "sg-065f3d55ea50b8aa9",
+            "timeouts": null,
+            "to_port": 443,
+            "type": "ingress"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDB9LCJzY2hlbWFfdmVyc2lvbiI6IjIifQ==",
+          "dependencies": [
+            "module.eks_cluster.module.eks.aws_security_group.cluster",
+            "module.eks_cluster.module.eks.aws_security_group.node",
+            "module.vpc.module.this.aws_vpc.this"
+          ],
+          "create_before_destroy": true
+        },
+        {
+          "index_key": "ingress_nodes_443",
+          "deposed": "7950f913",
+          "schema_version": 2,
+          "attributes": {
+            "cidr_blocks": null,
+            "description": "Node groups to cluster API",
+            "from_port": 443,
+            "id": "sgrule-1360149051",
+            "ipv6_cidr_blocks": null,
+            "prefix_list_ids": null,
+            "protocol": "tcp",
+            "region": "us-east-1",
+            "security_group_id": "sg-0c9e466f973e4bdbc",
+            "security_group_rule_id": "sgr-047304834f25c45f0",
+            "self": false,
+            "source_security_group_id": "sg-05b0f0f3659ebce06",
             "timeouts": null,
             "to_port": 443,
             "type": "ingress"
@@ -530,13 +870,46 @@
             ],
             "description": "Allow all egress",
             "from_port": 0,
-            "id": "sgrule-3263048725",
+            "id": "sgrule-2527616850",
             "ipv6_cidr_blocks": null,
             "prefix_list_ids": null,
             "protocol": "-1",
             "region": "us-east-1",
-            "security_group_id": "sg-02ba3ee5dd9021d23",
-            "security_group_rule_id": "sgr-0d903cd4ae37310aa",
+            "security_group_id": "sg-065f3d55ea50b8aa9",
+            "security_group_rule_id": "sgr-02cfd3a9e2de18a3e",
+            "self": false,
+            "source_security_group_id": null,
+            "timeouts": null,
+            "to_port": 0,
+            "type": "egress"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDB9LCJzY2hlbWFfdmVyc2lvbiI6IjIifQ==",
+          "dependencies": [
+            "module.eks_cluster.module.eks.aws_security_group.cluster",
+            "module.eks_cluster.module.eks.aws_security_group.node",
+            "module.vpc.module.this.aws_vpc.this"
+          ],
+          "create_before_destroy": true
+        },
+        {
+          "index_key": "egress_all",
+          "deposed": "9c5ddec4",
+          "schema_version": 2,
+          "attributes": {
+            "cidr_blocks": [
+              "0.0.0.0/0"
+            ],
+            "description": "Allow all egress",
+            "from_port": 0,
+            "id": "sgrule-3611374093",
+            "ipv6_cidr_blocks": null,
+            "prefix_list_ids": null,
+            "protocol": "-1",
+            "region": "us-east-1",
+            "security_group_id": "sg-05b0f0f3659ebce06",
+            "security_group_rule_id": "sgr-012163db366eeab15",
             "self": false,
             "source_security_group_id": null,
             "timeouts": null,
@@ -560,15 +933,46 @@
             "cidr_blocks": null,
             "description": "Cluster API to node groups",
             "from_port": 443,
-            "id": "sgrule-704595724",
+            "id": "sgrule-1920537239",
             "ipv6_cidr_blocks": null,
             "prefix_list_ids": null,
             "protocol": "tcp",
             "region": "us-east-1",
-            "security_group_id": "sg-02ba3ee5dd9021d23",
-            "security_group_rule_id": "sgr-0cf5f50482e7f4f3c",
+            "security_group_id": "sg-065f3d55ea50b8aa9",
+            "security_group_rule_id": "sgr-0ad3b26fdbb1cb935",
             "self": false,
-            "source_security_group_id": "sg-054c27215cd35250a",
+            "source_security_group_id": "sg-0870d22b15953be98",
+            "timeouts": null,
+            "to_port": 443,
+            "type": "ingress"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDB9LCJzY2hlbWFfdmVyc2lvbiI6IjIifQ==",
+          "dependencies": [
+            "module.eks_cluster.module.eks.aws_security_group.cluster",
+            "module.eks_cluster.module.eks.aws_security_group.node",
+            "module.vpc.module.this.aws_vpc.this"
+          ],
+          "create_before_destroy": true
+        },
+        {
+          "index_key": "ingress_cluster_443",
+          "deposed": "45ce458c",
+          "schema_version": 2,
+          "attributes": {
+            "cidr_blocks": null,
+            "description": "Cluster API to node groups",
+            "from_port": 443,
+            "id": "sgrule-340404800",
+            "ipv6_cidr_blocks": null,
+            "prefix_list_ids": null,
+            "protocol": "tcp",
+            "region": "us-east-1",
+            "security_group_id": "sg-05b0f0f3659ebce06",
+            "security_group_rule_id": "sgr-086f90b26cc5b3bdc",
+            "self": false,
+            "source_security_group_id": "sg-0c9e466f973e4bdbc",
             "timeouts": null,
             "to_port": 443,
             "type": "ingress"
@@ -590,15 +994,46 @@
             "cidr_blocks": null,
             "description": "Cluster API to node 4443/tcp webhook",
             "from_port": 4443,
-            "id": "sgrule-3277309053",
+            "id": "sgrule-2105423417",
             "ipv6_cidr_blocks": null,
             "prefix_list_ids": null,
             "protocol": "tcp",
             "region": "us-east-1",
-            "security_group_id": "sg-02ba3ee5dd9021d23",
-            "security_group_rule_id": "sgr-031d9ced5b37c8489",
+            "security_group_id": "sg-065f3d55ea50b8aa9",
+            "security_group_rule_id": "sgr-02e2b80e6905e89f6",
             "self": false,
-            "source_security_group_id": "sg-054c27215cd35250a",
+            "source_security_group_id": "sg-0870d22b15953be98",
+            "timeouts": null,
+            "to_port": 4443,
+            "type": "ingress"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDB9LCJzY2hlbWFfdmVyc2lvbiI6IjIifQ==",
+          "dependencies": [
+            "module.eks_cluster.module.eks.aws_security_group.cluster",
+            "module.eks_cluster.module.eks.aws_security_group.node",
+            "module.vpc.module.this.aws_vpc.this"
+          ],
+          "create_before_destroy": true
+        },
+        {
+          "index_key": "ingress_cluster_4443_webhook",
+          "deposed": "a49ee1b9",
+          "schema_version": 2,
+          "attributes": {
+            "cidr_blocks": null,
+            "description": "Cluster API to node 4443/tcp webhook",
+            "from_port": 4443,
+            "id": "sgrule-2806138635",
+            "ipv6_cidr_blocks": null,
+            "prefix_list_ids": null,
+            "protocol": "tcp",
+            "region": "us-east-1",
+            "security_group_id": "sg-05b0f0f3659ebce06",
+            "security_group_rule_id": "sgr-0c3dbd23a34176446",
+            "self": false,
+            "source_security_group_id": "sg-0c9e466f973e4bdbc",
             "timeouts": null,
             "to_port": 4443,
             "type": "ingress"
@@ -620,15 +1055,46 @@
             "cidr_blocks": null,
             "description": "Cluster API to node 6443/tcp webhook",
             "from_port": 6443,
-            "id": "sgrule-169190379",
+            "id": "sgrule-3023851951",
             "ipv6_cidr_blocks": null,
             "prefix_list_ids": null,
             "protocol": "tcp",
             "region": "us-east-1",
-            "security_group_id": "sg-02ba3ee5dd9021d23",
-            "security_group_rule_id": "sgr-098b526efefe6ca38",
+            "security_group_id": "sg-065f3d55ea50b8aa9",
+            "security_group_rule_id": "sgr-0f426ca568891b24e",
             "self": false,
-            "source_security_group_id": "sg-054c27215cd35250a",
+            "source_security_group_id": "sg-0870d22b15953be98",
+            "timeouts": null,
+            "to_port": 6443,
+            "type": "ingress"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDB9LCJzY2hlbWFfdmVyc2lvbiI6IjIifQ==",
+          "dependencies": [
+            "module.eks_cluster.module.eks.aws_security_group.cluster",
+            "module.eks_cluster.module.eks.aws_security_group.node",
+            "module.vpc.module.this.aws_vpc.this"
+          ],
+          "create_before_destroy": true
+        },
+        {
+          "index_key": "ingress_cluster_6443_webhook",
+          "deposed": "12f3f308",
+          "schema_version": 2,
+          "attributes": {
+            "cidr_blocks": null,
+            "description": "Cluster API to node 6443/tcp webhook",
+            "from_port": 6443,
+            "id": "sgrule-1845502109",
+            "ipv6_cidr_blocks": null,
+            "prefix_list_ids": null,
+            "protocol": "tcp",
+            "region": "us-east-1",
+            "security_group_id": "sg-05b0f0f3659ebce06",
+            "security_group_rule_id": "sgr-0147101d32d08655f",
+            "self": false,
+            "source_security_group_id": "sg-0c9e466f973e4bdbc",
             "timeouts": null,
             "to_port": 6443,
             "type": "ingress"
@@ -650,15 +1116,46 @@
             "cidr_blocks": null,
             "description": "Cluster API to node 8443/tcp webhook",
             "from_port": 8443,
-            "id": "sgrule-424255434",
+            "id": "sgrule-2808114574",
             "ipv6_cidr_blocks": null,
             "prefix_list_ids": null,
             "protocol": "tcp",
             "region": "us-east-1",
-            "security_group_id": "sg-02ba3ee5dd9021d23",
-            "security_group_rule_id": "sgr-0f1fe83fd37243961",
+            "security_group_id": "sg-065f3d55ea50b8aa9",
+            "security_group_rule_id": "sgr-0c33d67c47d92cecb",
             "self": false,
-            "source_security_group_id": "sg-054c27215cd35250a",
+            "source_security_group_id": "sg-0870d22b15953be98",
+            "timeouts": null,
+            "to_port": 8443,
+            "type": "ingress"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDB9LCJzY2hlbWFfdmVyc2lvbiI6IjIifQ==",
+          "dependencies": [
+            "module.eks_cluster.module.eks.aws_security_group.cluster",
+            "module.eks_cluster.module.eks.aws_security_group.node",
+            "module.vpc.module.this.aws_vpc.this"
+          ],
+          "create_before_destroy": true
+        },
+        {
+          "index_key": "ingress_cluster_8443_webhook",
+          "deposed": "9af198d5",
+          "schema_version": 2,
+          "attributes": {
+            "cidr_blocks": null,
+            "description": "Cluster API to node 8443/tcp webhook",
+            "from_port": 8443,
+            "id": "sgrule-2103188668",
+            "ipv6_cidr_blocks": null,
+            "prefix_list_ids": null,
+            "protocol": "tcp",
+            "region": "us-east-1",
+            "security_group_id": "sg-05b0f0f3659ebce06",
+            "security_group_rule_id": "sgr-015f8821c03ee166a",
+            "self": false,
+            "source_security_group_id": "sg-0c9e466f973e4bdbc",
             "timeouts": null,
             "to_port": 8443,
             "type": "ingress"
@@ -680,15 +1177,46 @@
             "cidr_blocks": null,
             "description": "Cluster API to node 9443/tcp webhook",
             "from_port": 9443,
-            "id": "sgrule-2112400385",
+            "id": "sgrule-3284229701",
             "ipv6_cidr_blocks": null,
             "prefix_list_ids": null,
             "protocol": "tcp",
             "region": "us-east-1",
-            "security_group_id": "sg-02ba3ee5dd9021d23",
-            "security_group_rule_id": "sgr-0af1642fcce0dffc2",
+            "security_group_id": "sg-065f3d55ea50b8aa9",
+            "security_group_rule_id": "sgr-01b2517b7ef8033d5",
             "self": false,
-            "source_security_group_id": "sg-054c27215cd35250a",
+            "source_security_group_id": "sg-0870d22b15953be98",
+            "timeouts": null,
+            "to_port": 9443,
+            "type": "ingress"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDB9LCJzY2hlbWFfdmVyc2lvbiI6IjIifQ==",
+          "dependencies": [
+            "module.eks_cluster.module.eks.aws_security_group.cluster",
+            "module.eks_cluster.module.eks.aws_security_group.node",
+            "module.vpc.module.this.aws_vpc.this"
+          ],
+          "create_before_destroy": true
+        },
+        {
+          "index_key": "ingress_cluster_9443_webhook",
+          "deposed": "91588ac7",
+          "schema_version": 2,
+          "attributes": {
+            "cidr_blocks": null,
+            "description": "Cluster API to node 9443/tcp webhook",
+            "from_port": 9443,
+            "id": "sgrule-436023159",
+            "ipv6_cidr_blocks": null,
+            "prefix_list_ids": null,
+            "protocol": "tcp",
+            "region": "us-east-1",
+            "security_group_id": "sg-05b0f0f3659ebce06",
+            "security_group_rule_id": "sgr-07700a59dc1ddb523",
+            "self": false,
+            "source_security_group_id": "sg-0c9e466f973e4bdbc",
             "timeouts": null,
             "to_port": 9443,
             "type": "ingress"
@@ -710,15 +1238,46 @@
             "cidr_blocks": null,
             "description": "Cluster API to node kubelets",
             "from_port": 10250,
-            "id": "sgrule-983851894",
+            "id": "sgrule-3399457542",
             "ipv6_cidr_blocks": null,
             "prefix_list_ids": null,
             "protocol": "tcp",
             "region": "us-east-1",
-            "security_group_id": "sg-02ba3ee5dd9021d23",
-            "security_group_rule_id": "sgr-0de937f2556a9a95d",
+            "security_group_id": "sg-065f3d55ea50b8aa9",
+            "security_group_rule_id": "sgr-0d31264377323426b",
             "self": false,
-            "source_security_group_id": "sg-054c27215cd35250a",
+            "source_security_group_id": "sg-0870d22b15953be98",
+            "timeouts": null,
+            "to_port": 10250,
+            "type": "ingress"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDB9LCJzY2hlbWFfdmVyc2lvbiI6IjIifQ==",
+          "dependencies": [
+            "module.eks_cluster.module.eks.aws_security_group.cluster",
+            "module.eks_cluster.module.eks.aws_security_group.node",
+            "module.vpc.module.this.aws_vpc.this"
+          ],
+          "create_before_destroy": true
+        },
+        {
+          "index_key": "ingress_cluster_kubelet",
+          "deposed": "84c221da",
+          "schema_version": 2,
+          "attributes": {
+            "cidr_blocks": null,
+            "description": "Cluster API to node kubelets",
+            "from_port": 10250,
+            "id": "sgrule-1017817254",
+            "ipv6_cidr_blocks": null,
+            "prefix_list_ids": null,
+            "protocol": "tcp",
+            "region": "us-east-1",
+            "security_group_id": "sg-05b0f0f3659ebce06",
+            "security_group_rule_id": "sgr-02a74d20a3b4bc1f7",
+            "self": false,
+            "source_security_group_id": "sg-0c9e466f973e4bdbc",
             "timeouts": null,
             "to_port": 10250,
             "type": "ingress"
@@ -740,13 +1299,44 @@
             "cidr_blocks": null,
             "description": "Node to node ingress on ephemeral ports",
             "from_port": 1025,
-            "id": "sgrule-1972244410",
+            "id": "sgrule-4087681890",
             "ipv6_cidr_blocks": null,
             "prefix_list_ids": null,
             "protocol": "tcp",
             "region": "us-east-1",
-            "security_group_id": "sg-02ba3ee5dd9021d23",
-            "security_group_rule_id": "sgr-0988abb6fe37d72e5",
+            "security_group_id": "sg-065f3d55ea50b8aa9",
+            "security_group_rule_id": "sgr-0b02e50f7244f7aeb",
+            "self": true,
+            "source_security_group_id": null,
+            "timeouts": null,
+            "to_port": 65535,
+            "type": "ingress"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDB9LCJzY2hlbWFfdmVyc2lvbiI6IjIifQ==",
+          "dependencies": [
+            "module.eks_cluster.module.eks.aws_security_group.cluster",
+            "module.eks_cluster.module.eks.aws_security_group.node",
+            "module.vpc.module.this.aws_vpc.this"
+          ],
+          "create_before_destroy": true
+        },
+        {
+          "index_key": "ingress_nodes_ephemeral",
+          "deposed": "27de2eaf",
+          "schema_version": 2,
+          "attributes": {
+            "cidr_blocks": null,
+            "description": "Node to node ingress on ephemeral ports",
+            "from_port": 1025,
+            "id": "sgrule-3633132593",
+            "ipv6_cidr_blocks": null,
+            "prefix_list_ids": null,
+            "protocol": "tcp",
+            "region": "us-east-1",
+            "security_group_id": "sg-05b0f0f3659ebce06",
+            "security_group_rule_id": "sgr-0b91805dff5454fbd",
             "self": true,
             "source_security_group_id": null,
             "timeouts": null,
@@ -770,13 +1360,44 @@
             "cidr_blocks": null,
             "description": "Node to node CoreDNS",
             "from_port": 53,
-            "id": "sgrule-632649233",
+            "id": "sgrule-4133516930",
             "ipv6_cidr_blocks": null,
             "prefix_list_ids": null,
             "protocol": "tcp",
             "region": "us-east-1",
-            "security_group_id": "sg-02ba3ee5dd9021d23",
-            "security_group_rule_id": "sgr-0c2421faf6b06d410",
+            "security_group_id": "sg-065f3d55ea50b8aa9",
+            "security_group_rule_id": "sgr-0019c1ccea2b59e47",
+            "self": true,
+            "source_security_group_id": null,
+            "timeouts": null,
+            "to_port": 53,
+            "type": "ingress"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDB9LCJzY2hlbWFfdmVyc2lvbiI6IjIifQ==",
+          "dependencies": [
+            "module.eks_cluster.module.eks.aws_security_group.cluster",
+            "module.eks_cluster.module.eks.aws_security_group.node",
+            "module.vpc.module.this.aws_vpc.this"
+          ],
+          "create_before_destroy": true
+        },
+        {
+          "index_key": "ingress_self_coredns_tcp",
+          "deposed": "3a10b324",
+          "schema_version": 2,
+          "attributes": {
+            "cidr_blocks": null,
+            "description": "Node to node CoreDNS",
+            "from_port": 53,
+            "id": "sgrule-3932119543",
+            "ipv6_cidr_blocks": null,
+            "prefix_list_ids": null,
+            "protocol": "tcp",
+            "region": "us-east-1",
+            "security_group_id": "sg-05b0f0f3659ebce06",
+            "security_group_rule_id": "sgr-089cb1f7a20f3e51b",
             "self": true,
             "source_security_group_id": null,
             "timeouts": null,
@@ -800,13 +1421,44 @@
             "cidr_blocks": null,
             "description": "Node to node CoreDNS UDP",
             "from_port": 53,
-            "id": "sgrule-2179651070",
+            "id": "sgrule-1379915117",
             "ipv6_cidr_blocks": null,
             "prefix_list_ids": null,
             "protocol": "udp",
             "region": "us-east-1",
-            "security_group_id": "sg-02ba3ee5dd9021d23",
-            "security_group_rule_id": "sgr-02545cf6ea1943b1e",
+            "security_group_id": "sg-065f3d55ea50b8aa9",
+            "security_group_rule_id": "sgr-0f65b1776e07389a7",
+            "self": true,
+            "source_security_group_id": null,
+            "timeouts": null,
+            "to_port": 53,
+            "type": "ingress"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDB9LCJzY2hlbWFfdmVyc2lvbiI6IjIifQ==",
+          "dependencies": [
+            "module.eks_cluster.module.eks.aws_security_group.cluster",
+            "module.eks_cluster.module.eks.aws_security_group.node",
+            "module.vpc.module.this.aws_vpc.this"
+          ],
+          "create_before_destroy": true
+        },
+        {
+          "index_key": "ingress_self_coredns_udp",
+          "deposed": "5cf7d43d",
+          "schema_version": 2,
+          "attributes": {
+            "cidr_blocks": null,
+            "description": "Node to node CoreDNS UDP",
+            "from_port": 53,
+            "id": "sgrule-1308672536",
+            "ipv6_cidr_blocks": null,
+            "prefix_list_ids": null,
+            "protocol": "udp",
+            "region": "us-east-1",
+            "security_group_id": "sg-05b0f0f3659ebce06",
+            "security_group_rule_id": "sgr-03ad7482db80b14ba",
             "self": true,
             "source_security_group_id": null,
             "timeouts": null,
@@ -847,7 +1499,47 @@
       "type": "aws_iam_policy_document",
       "name": "assume_role_policy",
       "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
-      "instances": []
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 0,
+          "attributes": {
+            "id": "2560088296",
+            "json": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Sid\": \"EKSNodeAssumeRole\",\n      \"Effect\": \"Allow\",\n      \"Action\": \"sts:AssumeRole\",\n      \"Principal\": {\n        \"Service\": \"ec2.amazonaws.com\"\n      }\n    }\n  ]\n}",
+            "minified_json": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"EKSNodeAssumeRole\",\"Effect\":\"Allow\",\"Action\":\"sts:AssumeRole\",\"Principal\":{\"Service\":\"ec2.amazonaws.com\"}}]}",
+            "override_json": null,
+            "override_policy_documents": null,
+            "policy_id": null,
+            "source_json": null,
+            "source_policy_documents": null,
+            "statement": [
+              {
+                "actions": [
+                  "sts:AssumeRole"
+                ],
+                "condition": [],
+                "effect": "Allow",
+                "not_actions": [],
+                "not_principals": [],
+                "not_resources": [],
+                "principals": [
+                  {
+                    "identifiers": [
+                      "ec2.amazonaws.com"
+                    ],
+                    "type": "Service"
+                  }
+                ],
+                "resources": [],
+                "sid": "EKSNodeAssumeRole"
+              }
+            ],
+            "version": "2012-10-17"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0
+        }
+      ]
     },
     {
       "module": "module.eks_cluster.module.eks.module.eks_managed_node_group[\"default\"]",
@@ -912,7 +1604,46 @@
       "type": "aws_iam_role",
       "name": "this",
       "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
-      "instances": []
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::866934333672:role/default-eks-node-group-20250804211154834700000001",
+            "assume_role_policy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ec2.amazonaws.com\"},\"Sid\":\"EKSNodeAssumeRole\"}],\"Version\":\"2012-10-17\"}",
+            "create_date": "2025-08-04T21:11:55Z",
+            "description": "EKS managed node group IAM role",
+            "force_detach_policies": true,
+            "id": "default-eks-node-group-20250804211154834700000001",
+            "inline_policy": [],
+            "managed_policy_arns": [
+              "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly",
+              "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy",
+              "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+            ],
+            "max_session_duration": 3600,
+            "name": "default-eks-node-group-20250804211154834700000001",
+            "name_prefix": "default-eks-node-group-",
+            "path": "/",
+            "permissions_boundary": "",
+            "tags": {},
+            "tags_all": {},
+            "unique_id": "AROA4TWKQEDUC33E6GNTG"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "866934333672",
+            "name": "default-eks-node-group-20250804211154834700000001"
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "data.aws_iam_role.eks_node_group",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.data.aws_iam_policy_document.assume_role_policy"
+          ],
+          "create_before_destroy": true
+        }
+      ]
     },
     {
       "module": "module.eks_cluster.module.eks.module.eks_managed_node_group[\"default\"]",
@@ -936,10 +1667,295 @@
       "type": "aws_iam_role_policy_attachment",
       "name": "this",
       "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
-      "instances": []
+      "instances": [
+        {
+          "index_key": "AmazonEC2ContainerRegistryReadOnly",
+          "schema_version": 0,
+          "attributes": {
+            "id": "default-eks-node-group-20250804211154834700000001/arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly",
+            "policy_arn": "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly",
+            "role": "default-eks-node-group-20250804211154834700000001"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "866934333672",
+            "policy_arn": "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly",
+            "role": "default-eks-node-group-20250804211154834700000001"
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "data.aws_iam_role.eks_node_group",
+            "module.eks_cluster.module.eks.data.aws_caller_identity.current",
+            "module.eks_cluster.module.eks.data.aws_partition.current",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.aws_iam_role.this",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.data.aws_caller_identity.current",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.data.aws_iam_policy_document.assume_role_policy",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.data.aws_partition.current"
+          ],
+          "create_before_destroy": true
+        },
+        {
+          "index_key": "AmazonEKSWorkerNodePolicy",
+          "schema_version": 0,
+          "attributes": {
+            "id": "default-eks-node-group-20250804211154834700000001/arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy",
+            "policy_arn": "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy",
+            "role": "default-eks-node-group-20250804211154834700000001"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "866934333672",
+            "policy_arn": "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy",
+            "role": "default-eks-node-group-20250804211154834700000001"
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "data.aws_iam_role.eks_node_group",
+            "module.eks_cluster.module.eks.data.aws_caller_identity.current",
+            "module.eks_cluster.module.eks.data.aws_partition.current",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.aws_iam_role.this",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.data.aws_caller_identity.current",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.data.aws_iam_policy_document.assume_role_policy",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.data.aws_partition.current"
+          ],
+          "create_before_destroy": true
+        },
+        {
+          "index_key": "AmazonEKS_CNI_Policy",
+          "schema_version": 0,
+          "attributes": {
+            "id": "default-eks-node-group-20250804211154834700000001/arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy",
+            "policy_arn": "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy",
+            "role": "default-eks-node-group-20250804211154834700000001"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "866934333672",
+            "policy_arn": "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy",
+            "role": "default-eks-node-group-20250804211154834700000001"
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "data.aws_iam_role.eks_node_group",
+            "module.eks_cluster.module.eks.data.aws_caller_identity.current",
+            "module.eks_cluster.module.eks.data.aws_partition.current",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.aws_iam_role.this",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.data.aws_caller_identity.current",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.data.aws_iam_policy_document.assume_role_policy",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.data.aws_partition.current"
+          ],
+          "create_before_destroy": true
+        }
+      ]
     },
     {
       "module": "module.eks_cluster.module.eks.module.eks_managed_node_group[\"default\"].module.user_data",
+      "mode": "data",
+      "type": "cloudinit_config",
+      "name": "al2_eks_managed_node_group",
+      "provider": "provider[\"registry.terraform.io/hashicorp/cloudinit\"]",
+      "instances": []
+    },
+    {
+      "module": "module.eks_cluster.module.eks.module.eks_managed_node_group[\"general\"]",
+      "mode": "data",
+      "type": "aws_caller_identity",
+      "name": "current",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": []
+    },
+    {
+      "module": "module.eks_cluster.module.eks.module.eks_managed_node_group[\"general\"]",
+      "mode": "data",
+      "type": "aws_ec2_instance_type",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": []
+    },
+    {
+      "module": "module.eks_cluster.module.eks.module.eks_managed_node_group[\"general\"]",
+      "mode": "data",
+      "type": "aws_iam_policy_document",
+      "name": "role",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": []
+    },
+    {
+      "module": "module.eks_cluster.module.eks.module.eks_managed_node_group[\"general\"]",
+      "mode": "data",
+      "type": "aws_partition",
+      "name": "current",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": []
+    },
+    {
+      "module": "module.eks_cluster.module.eks.module.eks_managed_node_group[\"general\"]",
+      "mode": "data",
+      "type": "aws_subnet",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": []
+    },
+    {
+      "module": "module.eks_cluster.module.eks.module.eks_managed_node_group[\"general\"]",
+      "mode": "managed",
+      "type": "aws_iam_role",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::866934333672:role/general-eks-node-group-20250804203258481500000001",
+            "assume_role_policy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ec2.amazonaws.com\"},\"Sid\":\"EKSNodeAssumeRole\"}],\"Version\":\"2012-10-17\"}",
+            "create_date": "2025-08-04T20:32:58Z",
+            "description": "EKS managed node group IAM role",
+            "force_detach_policies": true,
+            "id": "general-eks-node-group-20250804203258481500000001",
+            "inline_policy": [],
+            "managed_policy_arns": [
+              "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly",
+              "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy",
+              "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+            ],
+            "max_session_duration": 3600,
+            "name": "general-eks-node-group-20250804203258481500000001",
+            "name_prefix": "general-eks-node-group-",
+            "path": "/",
+            "permissions_boundary": "",
+            "tags": {
+              "Environment": "production",
+              "Project": "jordan-prod-eks"
+            },
+            "tags_all": {
+              "Environment": "production",
+              "Project": "jordan-prod-eks"
+            },
+            "unique_id": "AROA4TWKQEDUNH7N7VKS3"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "866934333672",
+            "name": "general-eks-node-group-20250804203258481500000001"
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.data.aws_iam_policy_document.assume_role_policy"
+          ],
+          "create_before_destroy": true
+        }
+      ]
+    },
+    {
+      "module": "module.eks_cluster.module.eks.module.eks_managed_node_group[\"general\"]",
+      "mode": "managed",
+      "type": "aws_iam_role_policy",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": []
+    },
+    {
+      "module": "module.eks_cluster.module.eks.module.eks_managed_node_group[\"general\"]",
+      "mode": "managed",
+      "type": "aws_iam_role_policy_attachment",
+      "name": "additional",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": []
+    },
+    {
+      "module": "module.eks_cluster.module.eks.module.eks_managed_node_group[\"general\"]",
+      "mode": "managed",
+      "type": "aws_iam_role_policy_attachment",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "AmazonEC2ContainerRegistryReadOnly",
+          "schema_version": 0,
+          "attributes": {
+            "id": "general-eks-node-group-20250804203258481500000001/arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly",
+            "policy_arn": "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly",
+            "role": "general-eks-node-group-20250804203258481500000001"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "866934333672",
+            "policy_arn": "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly",
+            "role": "general-eks-node-group-20250804203258481500000001"
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.eks_cluster.module.eks.data.aws_caller_identity.current",
+            "module.eks_cluster.module.eks.data.aws_partition.current",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.aws_iam_role.this",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.data.aws_caller_identity.current",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.data.aws_iam_policy_document.assume_role_policy",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.data.aws_partition.current"
+          ],
+          "create_before_destroy": true
+        },
+        {
+          "index_key": "AmazonEKSWorkerNodePolicy",
+          "schema_version": 0,
+          "attributes": {
+            "id": "general-eks-node-group-20250804203258481500000001/arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy",
+            "policy_arn": "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy",
+            "role": "general-eks-node-group-20250804203258481500000001"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "866934333672",
+            "policy_arn": "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy",
+            "role": "general-eks-node-group-20250804203258481500000001"
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.eks_cluster.module.eks.data.aws_caller_identity.current",
+            "module.eks_cluster.module.eks.data.aws_partition.current",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.aws_iam_role.this",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.data.aws_caller_identity.current",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.data.aws_iam_policy_document.assume_role_policy",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.data.aws_partition.current"
+          ],
+          "create_before_destroy": true
+        },
+        {
+          "index_key": "AmazonEKS_CNI_Policy",
+          "schema_version": 0,
+          "attributes": {
+            "id": "general-eks-node-group-20250804203258481500000001/arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy",
+            "policy_arn": "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy",
+            "role": "general-eks-node-group-20250804203258481500000001"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "866934333672",
+            "policy_arn": "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy",
+            "role": "general-eks-node-group-20250804203258481500000001"
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.eks_cluster.module.eks.data.aws_caller_identity.current",
+            "module.eks_cluster.module.eks.data.aws_partition.current",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.aws_iam_role.this",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.data.aws_caller_identity.current",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.data.aws_iam_policy_document.assume_role_policy",
+            "module.eks_cluster.module.eks.module.eks_managed_node_group.data.aws_partition.current"
+          ],
+          "create_before_destroy": true
+        }
+      ]
+    },
+    {
+      "module": "module.eks_cluster.module.eks.module.eks_managed_node_group[\"general\"].module.user_data",
       "mode": "data",
       "type": "cloudinit_config",
       "name": "al2_eks_managed_node_group",
@@ -978,9 +1994,9 @@
           "index_key": 0,
           "schema_version": 0,
           "attributes": {
-            "id": "2786150787",
-            "json": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Sid\": \"Default\",\n      \"Effect\": \"Allow\",\n      \"Action\": \"kms:*\",\n      \"Resource\": \"*\",\n      \"Principal\": {\n        \"AWS\": \"arn:aws:iam::866934333672:root\"\n      }\n    },\n    {\n      \"Sid\": \"KeyAdministration\",\n      \"Effect\": \"Allow\",\n      \"Action\": [\n        \"kms:Update*\",\n        \"kms:UntagResource\",\n        \"kms:TagResource\",\n        \"kms:ScheduleKeyDeletion\",\n        \"kms:Revoke*\",\n        \"kms:ReplicateKey\",\n        \"kms:Put*\",\n        \"kms:List*\",\n        \"kms:ImportKeyMaterial\",\n        \"kms:Get*\",\n        \"kms:Enable*\",\n        \"kms:Disable*\",\n        \"kms:Describe*\",\n        \"kms:Delete*\",\n        \"kms:Create*\",\n        \"kms:CancelKeyDeletion\"\n      ],\n      \"Resource\": \"*\",\n      \"Principal\": {\n        \"AWS\": \"arn:aws:iam::866934333672:user/jorda-suber\"\n      }\n    },\n    {\n      \"Sid\": \"KeyUsage\",\n      \"Effect\": \"Allow\",\n      \"Action\": [\n        \"kms:ReEncrypt*\",\n        \"kms:GenerateDataKey*\",\n        \"kms:Encrypt\",\n        \"kms:DescribeKey\",\n        \"kms:Decrypt\"\n      ],\n      \"Resource\": \"*\",\n      \"Principal\": {\n        \"AWS\": \"arn:aws:iam::866934333672:role/jordan-prod-eks-cluster-20250804215450125400000001\"\n      }\n    }\n  ]\n}",
-            "minified_json": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"Default\",\"Effect\":\"Allow\",\"Action\":\"kms:*\",\"Resource\":\"*\",\"Principal\":{\"AWS\":\"arn:aws:iam::866934333672:root\"}},{\"Sid\":\"KeyAdministration\",\"Effect\":\"Allow\",\"Action\":[\"kms:Update*\",\"kms:UntagResource\",\"kms:TagResource\",\"kms:ScheduleKeyDeletion\",\"kms:Revoke*\",\"kms:ReplicateKey\",\"kms:Put*\",\"kms:List*\",\"kms:ImportKeyMaterial\",\"kms:Get*\",\"kms:Enable*\",\"kms:Disable*\",\"kms:Describe*\",\"kms:Delete*\",\"kms:Create*\",\"kms:CancelKeyDeletion\"],\"Resource\":\"*\",\"Principal\":{\"AWS\":\"arn:aws:iam::866934333672:user/jorda-suber\"}},{\"Sid\":\"KeyUsage\",\"Effect\":\"Allow\",\"Action\":[\"kms:ReEncrypt*\",\"kms:GenerateDataKey*\",\"kms:Encrypt\",\"kms:DescribeKey\",\"kms:Decrypt\"],\"Resource\":\"*\",\"Principal\":{\"AWS\":\"arn:aws:iam::866934333672:role/jordan-prod-eks-cluster-20250804215450125400000001\"}}]}",
+            "id": "2136859525",
+            "json": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Sid\": \"Default\",\n      \"Effect\": \"Allow\",\n      \"Action\": \"kms:*\",\n      \"Resource\": \"*\",\n      \"Principal\": {\n        \"AWS\": \"arn:aws:iam::866934333672:root\"\n      }\n    },\n    {\n      \"Sid\": \"KeyAdministration\",\n      \"Effect\": \"Allow\",\n      \"Action\": [\n        \"kms:Update*\",\n        \"kms:UntagResource\",\n        \"kms:TagResource\",\n        \"kms:ScheduleKeyDeletion\",\n        \"kms:Revoke*\",\n        \"kms:ReplicateKey\",\n        \"kms:Put*\",\n        \"kms:List*\",\n        \"kms:ImportKeyMaterial\",\n        \"kms:Get*\",\n        \"kms:Enable*\",\n        \"kms:Disable*\",\n        \"kms:Describe*\",\n        \"kms:Delete*\",\n        \"kms:Create*\",\n        \"kms:CancelKeyDeletion\"\n      ],\n      \"Resource\": \"*\",\n      \"Principal\": {\n        \"AWS\": \"arn:aws:iam::866934333672:user/jorda-suber\"\n      }\n    },\n    {\n      \"Sid\": \"KeyUsage\",\n      \"Effect\": \"Allow\",\n      \"Action\": [\n        \"kms:ReEncrypt*\",\n        \"kms:GenerateDataKey*\",\n        \"kms:Encrypt\",\n        \"kms:DescribeKey\",\n        \"kms:Decrypt\"\n      ],\n      \"Resource\": \"*\",\n      \"Principal\": {\n        \"AWS\": \"arn:aws:iam::866934333672:role/jordan-prod-eks-cluster-20250804203258482000000002\"\n      }\n    }\n  ]\n}",
+            "minified_json": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"Default\",\"Effect\":\"Allow\",\"Action\":\"kms:*\",\"Resource\":\"*\",\"Principal\":{\"AWS\":\"arn:aws:iam::866934333672:root\"}},{\"Sid\":\"KeyAdministration\",\"Effect\":\"Allow\",\"Action\":[\"kms:Update*\",\"kms:UntagResource\",\"kms:TagResource\",\"kms:ScheduleKeyDeletion\",\"kms:Revoke*\",\"kms:ReplicateKey\",\"kms:Put*\",\"kms:List*\",\"kms:ImportKeyMaterial\",\"kms:Get*\",\"kms:Enable*\",\"kms:Disable*\",\"kms:Describe*\",\"kms:Delete*\",\"kms:Create*\",\"kms:CancelKeyDeletion\"],\"Resource\":\"*\",\"Principal\":{\"AWS\":\"arn:aws:iam::866934333672:user/jorda-suber\"}},{\"Sid\":\"KeyUsage\",\"Effect\":\"Allow\",\"Action\":[\"kms:ReEncrypt*\",\"kms:GenerateDataKey*\",\"kms:Encrypt\",\"kms:DescribeKey\",\"kms:Decrypt\"],\"Resource\":\"*\",\"Principal\":{\"AWS\":\"arn:aws:iam::866934333672:role/jordan-prod-eks-cluster-20250804203258482000000002\"}}]}",
             "override_json": null,
             "override_policy_documents": null,
             "policy_id": null,
@@ -1062,7 +2078,7 @@
                 "principals": [
                   {
                     "identifiers": [
-                      "arn:aws:iam::866934333672:role/jordan-prod-eks-cluster-20250804215450125400000001"
+                      "arn:aws:iam::866934333672:role/jordan-prod-eks-cluster-20250804203258482000000002"
                     ],
                     "type": "AWS"
                   }
@@ -1117,8 +2133,8 @@
             "name": "alias/eks/jordan-prod-eks",
             "name_prefix": "",
             "region": "us-east-1",
-            "target_key_arn": "arn:aws:kms:us-east-1:866934333672:key/61a830d2-84a7-40be-973a-f4966ceb6753",
-            "target_key_id": "61a830d2-84a7-40be-973a-f4966ceb6753"
+            "target_key_arn": "arn:aws:kms:us-east-1:866934333672:key/10034cb8-5fbc-4fc7-9d65-acdd82d133de",
+            "target_key_id": "10034cb8-5fbc-4fc7-9d65-acdd82d133de"
           },
           "sensitive_attributes": [],
           "identity_schema_version": 0,
@@ -1166,19 +2182,19 @@
           "index_key": 0,
           "schema_version": 0,
           "attributes": {
-            "arn": "arn:aws:kms:us-east-1:866934333672:key/61a830d2-84a7-40be-973a-f4966ceb6753",
+            "arn": "arn:aws:kms:us-east-1:866934333672:key/10034cb8-5fbc-4fc7-9d65-acdd82d133de",
             "bypass_policy_lockout_safety_check": false,
             "custom_key_store_id": "",
             "customer_master_key_spec": "SYMMETRIC_DEFAULT",
             "deletion_window_in_days": null,
             "description": "jordan-prod-eks cluster encryption key",
             "enable_key_rotation": true,
-            "id": "61a830d2-84a7-40be-973a-f4966ceb6753",
+            "id": "10034cb8-5fbc-4fc7-9d65-acdd82d133de",
             "is_enabled": true,
-            "key_id": "61a830d2-84a7-40be-973a-f4966ceb6753",
+            "key_id": "10034cb8-5fbc-4fc7-9d65-acdd82d133de",
             "key_usage": "ENCRYPT_DECRYPT",
             "multi_region": false,
-            "policy": "{\"Statement\":[{\"Action\":\"kms:*\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::866934333672:root\"},\"Resource\":\"*\",\"Sid\":\"Default\"},{\"Action\":[\"kms:Update*\",\"kms:UntagResource\",\"kms:TagResource\",\"kms:ScheduleKeyDeletion\",\"kms:Revoke*\",\"kms:ReplicateKey\",\"kms:Put*\",\"kms:List*\",\"kms:ImportKeyMaterial\",\"kms:Get*\",\"kms:Enable*\",\"kms:Disable*\",\"kms:Describe*\",\"kms:Delete*\",\"kms:Create*\",\"kms:CancelKeyDeletion\"],\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::866934333672:user/jorda-suber\"},\"Resource\":\"*\",\"Sid\":\"KeyAdministration\"},{\"Action\":[\"kms:ReEncrypt*\",\"kms:GenerateDataKey*\",\"kms:Encrypt\",\"kms:DescribeKey\",\"kms:Decrypt\"],\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::866934333672:role/jordan-prod-eks-cluster-20250804215450125400000001\"},\"Resource\":\"*\",\"Sid\":\"KeyUsage\"}],\"Version\":\"2012-10-17\"}",
+            "policy": "{\"Statement\":[{\"Action\":\"kms:*\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::866934333672:root\"},\"Resource\":\"*\",\"Sid\":\"Default\"},{\"Action\":[\"kms:Update*\",\"kms:UntagResource\",\"kms:TagResource\",\"kms:ScheduleKeyDeletion\",\"kms:Revoke*\",\"kms:ReplicateKey\",\"kms:Put*\",\"kms:List*\",\"kms:ImportKeyMaterial\",\"kms:Get*\",\"kms:Enable*\",\"kms:Disable*\",\"kms:Describe*\",\"kms:Delete*\",\"kms:Create*\",\"kms:CancelKeyDeletion\"],\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::866934333672:user/jorda-suber\"},\"Resource\":\"*\",\"Sid\":\"KeyAdministration\"},{\"Action\":[\"kms:ReEncrypt*\",\"kms:GenerateDataKey*\",\"kms:Encrypt\",\"kms:DescribeKey\",\"kms:Decrypt\"],\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::866934333672:role/jordan-prod-eks-cluster-20250804203258482000000002\"},\"Resource\":\"*\",\"Sid\":\"KeyUsage\"}],\"Version\":\"2012-10-17\"}",
             "region": "us-east-1",
             "rotation_period_in_days": 365,
             "tags": {
@@ -1297,15 +2313,15 @@
           "index_key": 0,
           "schema_version": 0,
           "attributes": {
-            "arn": "arn:aws:ec2:us-east-1:866934333672:network-acl/acl-0144bf3788dfea5de",
-            "default_network_acl_id": "acl-0144bf3788dfea5de",
+            "arn": "arn:aws:ec2:us-east-1:866934333672:network-acl/acl-0ae3e0c8495c6fc09",
+            "default_network_acl_id": "acl-0ae3e0c8495c6fc09",
             "egress": [
               {
                 "action": "allow",
                 "cidr_block": "",
                 "from_port": 0,
-                "icmp_code": null,
-                "icmp_type": null,
+                "icmp_code": 0,
+                "icmp_type": 0,
                 "ipv6_cidr_block": "::/0",
                 "protocol": "-1",
                 "rule_no": 101,
@@ -1315,22 +2331,22 @@
                 "action": "allow",
                 "cidr_block": "0.0.0.0/0",
                 "from_port": 0,
-                "icmp_code": null,
-                "icmp_type": null,
+                "icmp_code": 0,
+                "icmp_type": 0,
                 "ipv6_cidr_block": "",
                 "protocol": "-1",
                 "rule_no": 100,
                 "to_port": 0
               }
             ],
-            "id": "acl-0144bf3788dfea5de",
+            "id": "acl-0ae3e0c8495c6fc09",
             "ingress": [
               {
                 "action": "allow",
                 "cidr_block": "",
                 "from_port": 0,
-                "icmp_code": null,
-                "icmp_type": null,
+                "icmp_code": 0,
+                "icmp_type": 0,
                 "ipv6_cidr_block": "::/0",
                 "protocol": "-1",
                 "rule_no": 101,
@@ -1340,8 +2356,8 @@
                 "action": "allow",
                 "cidr_block": "0.0.0.0/0",
                 "from_port": 0,
-                "icmp_code": null,
-                "icmp_type": null,
+                "icmp_code": 0,
+                "icmp_type": 0,
                 "ipv6_cidr_block": "",
                 "protocol": "-1",
                 "rule_no": 100,
@@ -1351,10 +2367,10 @@
             "owner_id": "866934333672",
             "region": "us-east-1",
             "subnet_ids": [
-              "subnet-013391a88962a9ffd",
-              "subnet-02b1d8073f4db9406",
-              "subnet-08dd90f1bdb305b0b",
-              "subnet-0dfc9b55a9c3b02c7"
+              "subnet-032d620274bcda8c8",
+              "subnet-055c83c673d188e0a",
+              "subnet-05cf29faec983563f",
+              "subnet-0d4e08f70cc06d587"
             ],
             "tags": {
               "Name": "demo-vpc-default"
@@ -1362,7 +2378,7 @@
             "tags_all": {
               "Name": "demo-vpc-default"
             },
-            "vpc_id": "vpc-019324d436b4fe412"
+            "vpc_id": "vpc-03ce88b4d2b2e5cd8"
           },
           "sensitive_attributes": [],
           "identity_schema_version": 0,
@@ -1384,11 +2400,11 @@
           "index_key": 0,
           "schema_version": 0,
           "attributes": {
-            "arn": "arn:aws:ec2:us-east-1:866934333672:route-table/rtb-00d621fd78a627904",
-            "default_route_table_id": "rtb-00d621fd78a627904",
-            "id": "rtb-00d621fd78a627904",
+            "arn": "arn:aws:ec2:us-east-1:866934333672:route-table/rtb-0c6bff60d37df6f33",
+            "default_route_table_id": "rtb-0c6bff60d37df6f33",
+            "id": "rtb-0c6bff60d37df6f33",
             "owner_id": "866934333672",
-            "propagating_vgws": null,
+            "propagating_vgws": [],
             "region": "us-east-1",
             "route": [],
             "tags": {
@@ -1401,7 +2417,7 @@
               "create": "5m",
               "update": "5m"
             },
-            "vpc_id": "vpc-019324d436b4fe412"
+            "vpc_id": "vpc-03ce88b4d2b2e5cd8"
           },
           "sensitive_attributes": [],
           "identity_schema_version": 0,
@@ -1423,10 +2439,10 @@
           "index_key": 0,
           "schema_version": 1,
           "attributes": {
-            "arn": "arn:aws:ec2:us-east-1:866934333672:security-group/sg-0c20ab9318886c679",
+            "arn": "arn:aws:ec2:us-east-1:866934333672:security-group/sg-0b4754affc0016076",
             "description": "default VPC security group",
             "egress": [],
-            "id": "sg-0c20ab9318886c679",
+            "id": "sg-0b4754affc0016076",
             "ingress": [],
             "name": "default",
             "name_prefix": "",
@@ -1439,7 +2455,7 @@
             "tags_all": {
               "Name": "demo-vpc-default"
             },
-            "vpc_id": "vpc-019324d436b4fe412"
+            "vpc_id": "vpc-03ce88b4d2b2e5cd8"
           },
           "sensitive_attributes": [],
           "identity_schema_version": 0,
@@ -1525,8 +2541,8 @@
           "index_key": 0,
           "schema_version": 0,
           "attributes": {
-            "arn": "arn:aws:ec2:us-east-1:866934333672:internet-gateway/igw-0d6d7f912683c6aaf",
-            "id": "igw-0d6d7f912683c6aaf",
+            "arn": "arn:aws:ec2:us-east-1:866934333672:internet-gateway/igw-0eca663bd6c5d3c6c",
+            "id": "igw-0eca663bd6c5d3c6c",
             "owner_id": "866934333672",
             "region": "us-east-1",
             "tags": {
@@ -1536,7 +2552,7 @@
               "Name": "demo-vpc"
             },
             "timeouts": null,
-            "vpc_id": "vpc-019324d436b4fe412"
+            "vpc_id": "vpc-03ce88b4d2b2e5cd8"
           },
           "sensitive_attributes": [],
           "identity_schema_version": 0,
@@ -1805,8 +2821,8 @@
             "destination_ipv6_cidr_block": "",
             "destination_prefix_list_id": "",
             "egress_only_gateway_id": "",
-            "gateway_id": "igw-0d6d7f912683c6aaf",
-            "id": "r-rtb-0dd0ac398ac4634ca1080289494",
+            "gateway_id": "igw-0eca663bd6c5d3c6c",
+            "id": "r-rtb-0b5d5f5138ffca2421080289494",
             "instance_id": "",
             "instance_owner_id": "",
             "local_gateway_id": "",
@@ -1814,7 +2830,7 @@
             "network_interface_id": "",
             "origin": "CreateRoute",
             "region": "us-east-1",
-            "route_table_id": "rtb-0dd0ac398ac4634ca",
+            "route_table_id": "rtb-0b5d5f5138ffca242",
             "state": "active",
             "timeouts": {
               "create": "5m",
@@ -1880,8 +2896,8 @@
           "index_key": 0,
           "schema_version": 0,
           "attributes": {
-            "arn": "arn:aws:ec2:us-east-1:866934333672:route-table/rtb-0ccb84670e6795c14",
-            "id": "rtb-0ccb84670e6795c14",
+            "arn": "arn:aws:ec2:us-east-1:866934333672:route-table/rtb-09e0172b6f1831fd2",
+            "id": "rtb-09e0172b6f1831fd2",
             "owner_id": "866934333672",
             "propagating_vgws": [],
             "region": "us-east-1",
@@ -1893,7 +2909,7 @@
               "Name": "demo-vpc-private-us-east-1a"
             },
             "timeouts": null,
-            "vpc_id": "vpc-019324d436b4fe412"
+            "vpc_id": "vpc-03ce88b4d2b2e5cd8"
           },
           "sensitive_attributes": [],
           "identity_schema_version": 0,
@@ -1907,8 +2923,8 @@
           "index_key": 1,
           "schema_version": 0,
           "attributes": {
-            "arn": "arn:aws:ec2:us-east-1:866934333672:route-table/rtb-079ad87b74572ba38",
-            "id": "rtb-079ad87b74572ba38",
+            "arn": "arn:aws:ec2:us-east-1:866934333672:route-table/rtb-056f14a40dd120f44",
+            "id": "rtb-056f14a40dd120f44",
             "owner_id": "866934333672",
             "propagating_vgws": [],
             "region": "us-east-1",
@@ -1920,7 +2936,7 @@
               "Name": "demo-vpc-private-us-east-1b"
             },
             "timeouts": null,
-            "vpc_id": "vpc-019324d436b4fe412"
+            "vpc_id": "vpc-03ce88b4d2b2e5cd8"
           },
           "sensitive_attributes": [],
           "identity_schema_version": 0,
@@ -1943,12 +2959,28 @@
           "index_key": 0,
           "schema_version": 0,
           "attributes": {
-            "arn": "arn:aws:ec2:us-east-1:866934333672:route-table/rtb-0dd0ac398ac4634ca",
-            "id": "rtb-0dd0ac398ac4634ca",
+            "arn": "arn:aws:ec2:us-east-1:866934333672:route-table/rtb-0b5d5f5138ffca242",
+            "id": "rtb-0b5d5f5138ffca242",
             "owner_id": "866934333672",
             "propagating_vgws": [],
             "region": "us-east-1",
-            "route": [],
+            "route": [
+              {
+                "carrier_gateway_id": "",
+                "cidr_block": "0.0.0.0/0",
+                "core_network_arn": "",
+                "destination_prefix_list_id": "",
+                "egress_only_gateway_id": "",
+                "gateway_id": "igw-0eca663bd6c5d3c6c",
+                "ipv6_cidr_block": "",
+                "local_gateway_id": "",
+                "nat_gateway_id": "",
+                "network_interface_id": "",
+                "transit_gateway_id": "",
+                "vpc_endpoint_id": "",
+                "vpc_peering_connection_id": ""
+              }
+            ],
             "tags": {
               "Name": "demo-vpc-public"
             },
@@ -1956,7 +2988,7 @@
               "Name": "demo-vpc-public"
             },
             "timeouts": null,
-            "vpc_id": "vpc-019324d436b4fe412"
+            "vpc_id": "vpc-03ce88b4d2b2e5cd8"
           },
           "sensitive_attributes": [],
           "identity_schema_version": 0,
@@ -2020,10 +3052,10 @@
           "schema_version": 0,
           "attributes": {
             "gateway_id": "",
-            "id": "rtbassoc-0cd1c24fe68557317",
+            "id": "rtbassoc-04c8ab943ee12161d",
             "region": "us-east-1",
-            "route_table_id": "rtb-0ccb84670e6795c14",
-            "subnet_id": "subnet-02b1d8073f4db9406",
+            "route_table_id": "rtb-09e0172b6f1831fd2",
+            "subnet_id": "subnet-0d4e08f70cc06d587",
             "timeouts": null
           },
           "sensitive_attributes": [],
@@ -2041,10 +3073,10 @@
           "schema_version": 0,
           "attributes": {
             "gateway_id": "",
-            "id": "rtbassoc-018ad3d6e115d6388",
+            "id": "rtbassoc-0effd889c06ae2876",
             "region": "us-east-1",
-            "route_table_id": "rtb-079ad87b74572ba38",
-            "subnet_id": "subnet-08dd90f1bdb305b0b",
+            "route_table_id": "rtb-056f14a40dd120f44",
+            "subnet_id": "subnet-055c83c673d188e0a",
             "timeouts": null
           },
           "sensitive_attributes": [],
@@ -2071,10 +3103,10 @@
           "schema_version": 0,
           "attributes": {
             "gateway_id": "",
-            "id": "rtbassoc-0d555fdbb87eb0c17",
+            "id": "rtbassoc-00c841af0d93a87f0",
             "region": "us-east-1",
-            "route_table_id": "rtb-0dd0ac398ac4634ca",
-            "subnet_id": "subnet-013391a88962a9ffd",
+            "route_table_id": "rtb-0b5d5f5138ffca242",
+            "subnet_id": "subnet-032d620274bcda8c8",
             "timeouts": null
           },
           "sensitive_attributes": [],
@@ -2092,10 +3124,10 @@
           "schema_version": 0,
           "attributes": {
             "gateway_id": "",
-            "id": "rtbassoc-0bb05b5a0524314e8",
+            "id": "rtbassoc-067f60fc319b55dce",
             "region": "us-east-1",
-            "route_table_id": "rtb-0dd0ac398ac4634ca",
-            "subnet_id": "subnet-0dfc9b55a9c3b02c7",
+            "route_table_id": "rtb-0b5d5f5138ffca242",
+            "subnet_id": "subnet-05cf29faec983563f",
             "timeouts": null
           },
           "sensitive_attributes": [],
@@ -2169,7 +3201,7 @@
           "index_key": 0,
           "schema_version": 1,
           "attributes": {
-            "arn": "arn:aws:ec2:us-east-1:866934333672:subnet/subnet-02b1d8073f4db9406",
+            "arn": "arn:aws:ec2:us-east-1:866934333672:subnet/subnet-0d4e08f70cc06d587",
             "assign_ipv6_address_on_creation": false,
             "availability_zone": "us-east-1a",
             "availability_zone_id": "use1-az6",
@@ -2179,7 +3211,7 @@
             "enable_lni_at_device_index": 0,
             "enable_resource_name_dns_a_record_on_launch": false,
             "enable_resource_name_dns_aaaa_record_on_launch": false,
-            "id": "subnet-02b1d8073f4db9406",
+            "id": "subnet-0d4e08f70cc06d587",
             "ipv6_cidr_block": "",
             "ipv6_cidr_block_association_id": "",
             "ipv6_native": false,
@@ -2196,7 +3228,97 @@
               "Name": "demo-vpc-private-us-east-1a"
             },
             "timeouts": null,
-            "vpc_id": "vpc-019324d436b4fe412"
+            "vpc_id": "vpc-03ce88b4d2b2e5cd8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.vpc.module.this.aws_vpc.this",
+            "module.vpc.module.this.aws_vpc_ipv4_cidr_block_association.this"
+          ],
+          "create_before_destroy": true
+        },
+        {
+          "index_key": 0,
+          "deposed": "166e76b7",
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:866934333672:subnet/subnet-0b96e8c3b86130a83",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-east-1a",
+            "availability_zone_id": "use1-az6",
+            "cidr_block": "10.0.11.0/24",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-0b96e8c3b86130a83",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "866934333672",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "region": "us-east-1",
+            "tags": {
+              "Name": "demo-vpc-private-us-east-1a"
+            },
+            "tags_all": {
+              "Name": "demo-vpc-private-us-east-1a"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0d36eaf30723d6814"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.vpc.module.this.aws_vpc.this",
+            "module.vpc.module.this.aws_vpc_ipv4_cidr_block_association.this"
+          ],
+          "create_before_destroy": true
+        },
+        {
+          "index_key": 0,
+          "deposed": "c6739fba",
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:866934333672:subnet/subnet-02d4049a4c7e11afa",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-east-1a",
+            "availability_zone_id": "use1-az6",
+            "cidr_block": "10.0.1.0/24",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-02d4049a4c7e11afa",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "866934333672",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "region": "us-east-1",
+            "tags": {
+              "Environment": "production",
+              "Name": "jordan-prod-eks-vpc-private-us-east-1a",
+              "Project": "jordan-prod-eks"
+            },
+            "tags_all": {
+              "Environment": "production",
+              "Name": "jordan-prod-eks-vpc-private-us-east-1a",
+              "Project": "jordan-prod-eks"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0d36eaf30723d6814"
           },
           "sensitive_attributes": [],
           "identity_schema_version": 0,
@@ -2211,7 +3333,7 @@
           "index_key": 1,
           "schema_version": 1,
           "attributes": {
-            "arn": "arn:aws:ec2:us-east-1:866934333672:subnet/subnet-08dd90f1bdb305b0b",
+            "arn": "arn:aws:ec2:us-east-1:866934333672:subnet/subnet-055c83c673d188e0a",
             "assign_ipv6_address_on_creation": false,
             "availability_zone": "us-east-1b",
             "availability_zone_id": "use1-az1",
@@ -2221,7 +3343,7 @@
             "enable_lni_at_device_index": 0,
             "enable_resource_name_dns_a_record_on_launch": false,
             "enable_resource_name_dns_aaaa_record_on_launch": false,
-            "id": "subnet-08dd90f1bdb305b0b",
+            "id": "subnet-055c83c673d188e0a",
             "ipv6_cidr_block": "",
             "ipv6_cidr_block_association_id": "",
             "ipv6_native": false,
@@ -2238,7 +3360,143 @@
               "Name": "demo-vpc-private-us-east-1b"
             },
             "timeouts": null,
-            "vpc_id": "vpc-019324d436b4fe412"
+            "vpc_id": "vpc-03ce88b4d2b2e5cd8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.vpc.module.this.aws_vpc.this",
+            "module.vpc.module.this.aws_vpc_ipv4_cidr_block_association.this"
+          ],
+          "create_before_destroy": true
+        },
+        {
+          "index_key": 1,
+          "deposed": "5d10e486",
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:866934333672:subnet/subnet-06d03d4e8f5364522",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-east-1b",
+            "availability_zone_id": "use1-az1",
+            "cidr_block": "10.0.2.0/24",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-06d03d4e8f5364522",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "866934333672",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "region": "us-east-1",
+            "tags": {
+              "Environment": "production",
+              "Name": "jordan-prod-eks-vpc-private-us-east-1b",
+              "Project": "jordan-prod-eks"
+            },
+            "tags_all": {
+              "Environment": "production",
+              "Name": "jordan-prod-eks-vpc-private-us-east-1b",
+              "Project": "jordan-prod-eks"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0d36eaf30723d6814"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.vpc.module.this.aws_vpc.this",
+            "module.vpc.module.this.aws_vpc_ipv4_cidr_block_association.this"
+          ],
+          "create_before_destroy": true
+        },
+        {
+          "index_key": 1,
+          "deposed": "cfd79b75",
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:866934333672:subnet/subnet-0d06c5a722b3b3831",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-east-1b",
+            "availability_zone_id": "use1-az1",
+            "cidr_block": "10.0.12.0/24",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-0d06c5a722b3b3831",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "866934333672",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "region": "us-east-1",
+            "tags": {
+              "Name": "demo-vpc-private-us-east-1b"
+            },
+            "tags_all": {
+              "Name": "demo-vpc-private-us-east-1b"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0d36eaf30723d6814"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.vpc.module.this.aws_vpc.this",
+            "module.vpc.module.this.aws_vpc_ipv4_cidr_block_association.this"
+          ],
+          "create_before_destroy": true
+        },
+        {
+          "index_key": 2,
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:866934333672:subnet/subnet-00165ce5da8a07cf0",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-east-1c",
+            "availability_zone_id": "use1-az2",
+            "cidr_block": "10.0.3.0/24",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-00165ce5da8a07cf0",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "866934333672",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "region": "us-east-1",
+            "tags": {
+              "Environment": "production",
+              "Name": "jordan-prod-eks-vpc-private-us-east-1c",
+              "Project": "jordan-prod-eks"
+            },
+            "tags_all": {
+              "Environment": "production",
+              "Name": "jordan-prod-eks-vpc-private-us-east-1c",
+              "Project": "jordan-prod-eks"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0d36eaf30723d6814"
           },
           "sensitive_attributes": [],
           "identity_schema_version": 0,
@@ -2262,7 +3520,7 @@
           "index_key": 0,
           "schema_version": 1,
           "attributes": {
-            "arn": "arn:aws:ec2:us-east-1:866934333672:subnet/subnet-013391a88962a9ffd",
+            "arn": "arn:aws:ec2:us-east-1:866934333672:subnet/subnet-032d620274bcda8c8",
             "assign_ipv6_address_on_creation": false,
             "availability_zone": "us-east-1a",
             "availability_zone_id": "use1-az6",
@@ -2272,7 +3530,7 @@
             "enable_lni_at_device_index": 0,
             "enable_resource_name_dns_a_record_on_launch": false,
             "enable_resource_name_dns_aaaa_record_on_launch": false,
-            "id": "subnet-013391a88962a9ffd",
+            "id": "subnet-032d620274bcda8c8",
             "ipv6_cidr_block": "",
             "ipv6_cidr_block_association_id": "",
             "ipv6_native": false,
@@ -2289,7 +3547,7 @@
               "Name": "demo-vpc-public-us-east-1a"
             },
             "timeouts": null,
-            "vpc_id": "vpc-019324d436b4fe412"
+            "vpc_id": "vpc-03ce88b4d2b2e5cd8"
           },
           "sensitive_attributes": [],
           "identity_schema_version": 0,
@@ -2303,7 +3561,7 @@
           "index_key": 1,
           "schema_version": 1,
           "attributes": {
-            "arn": "arn:aws:ec2:us-east-1:866934333672:subnet/subnet-0dfc9b55a9c3b02c7",
+            "arn": "arn:aws:ec2:us-east-1:866934333672:subnet/subnet-05cf29faec983563f",
             "assign_ipv6_address_on_creation": false,
             "availability_zone": "us-east-1b",
             "availability_zone_id": "use1-az1",
@@ -2313,7 +3571,7 @@
             "enable_lni_at_device_index": 0,
             "enable_resource_name_dns_a_record_on_launch": false,
             "enable_resource_name_dns_aaaa_record_on_launch": false,
-            "id": "subnet-0dfc9b55a9c3b02c7",
+            "id": "subnet-05cf29faec983563f",
             "ipv6_cidr_block": "",
             "ipv6_cidr_block_association_id": "",
             "ipv6_native": false,
@@ -2330,7 +3588,7 @@
               "Name": "demo-vpc-public-us-east-1b"
             },
             "timeouts": null,
-            "vpc_id": "vpc-019324d436b4fe412"
+            "vpc_id": "vpc-03ce88b4d2b2e5cd8"
           },
           "sensitive_attributes": [],
           "identity_schema_version": 0,
@@ -2361,17 +3619,17 @@
           "index_key": 0,
           "schema_version": 1,
           "attributes": {
-            "arn": "arn:aws:ec2:us-east-1:866934333672:vpc/vpc-019324d436b4fe412",
+            "arn": "arn:aws:ec2:us-east-1:866934333672:vpc/vpc-03ce88b4d2b2e5cd8",
             "assign_generated_ipv6_cidr_block": false,
             "cidr_block": "10.1.0.0/16",
-            "default_network_acl_id": "acl-0144bf3788dfea5de",
-            "default_route_table_id": "rtb-00d621fd78a627904",
-            "default_security_group_id": "sg-0c20ab9318886c679",
+            "default_network_acl_id": "acl-0ae3e0c8495c6fc09",
+            "default_route_table_id": "rtb-0c6bff60d37df6f33",
+            "default_security_group_id": "sg-0b4754affc0016076",
             "dhcp_options_id": "dopt-01847259dc9a6dec5",
             "enable_dns_hostnames": true,
             "enable_dns_support": true,
             "enable_network_address_usage_metrics": false,
-            "id": "vpc-019324d436b4fe412",
+            "id": "vpc-03ce88b4d2b2e5cd8",
             "instance_tenancy": "default",
             "ipv4_ipam_pool_id": null,
             "ipv4_netmask_length": null,
@@ -2380,7 +3638,46 @@
             "ipv6_cidr_block_network_border_group": "",
             "ipv6_ipam_pool_id": "",
             "ipv6_netmask_length": 0,
-            "main_route_table_id": "rtb-00d621fd78a627904",
+            "main_route_table_id": "rtb-0c6bff60d37df6f33",
+            "owner_id": "866934333672",
+            "region": "us-east-1",
+            "tags": {
+              "Name": "demo-vpc"
+            },
+            "tags_all": {
+              "Name": "demo-vpc"
+            }
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "create_before_destroy": true
+        },
+        {
+          "index_key": 0,
+          "deposed": "0ef2e819",
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:866934333672:vpc/vpc-0d36eaf30723d6814",
+            "assign_generated_ipv6_cidr_block": false,
+            "cidr_block": "10.0.0.0/16",
+            "default_network_acl_id": "acl-04cfbc6851abf7edf",
+            "default_route_table_id": "rtb-0af0c18ebd8b48af7",
+            "default_security_group_id": "sg-058a50bbfc6b1ff1d",
+            "dhcp_options_id": "dopt-01847259dc9a6dec5",
+            "enable_dns_hostnames": true,
+            "enable_dns_support": true,
+            "enable_network_address_usage_metrics": false,
+            "id": "vpc-0d36eaf30723d6814",
+            "instance_tenancy": "default",
+            "ipv4_ipam_pool_id": null,
+            "ipv4_netmask_length": null,
+            "ipv6_association_id": "",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_network_border_group": "",
+            "ipv6_ipam_pool_id": "",
+            "ipv6_netmask_length": 0,
+            "main_route_table_id": "rtb-0af0c18ebd8b48af7",
             "owner_id": "866934333672",
             "region": "us-east-1",
             "tags": {

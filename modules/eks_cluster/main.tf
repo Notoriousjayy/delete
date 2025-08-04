@@ -8,12 +8,18 @@ module "eks" {
   vpc_id     = var.vpc_id
   subnet_ids = var.subnet_ids
 
-  eks_managed_node_groups = {
-    for name, cfg in var.managed_node_groups : name => {
-      instance_types = cfg.instance_types
-      desired_size   = cfg.desired_size
-      min_size       = cfg.min_size
-      max_size       = cfg.max_size
-    }
-  }
+  # ─────────────────────────────────────────────────────────────────────────────
+  # Never manage the cluster’s IAM role or its policies
+  create_iam_role        = false
+  iam_role_arn           = var.existing_cluster_iam_role_arn  # point at an existing role
+  # ─────────────────────────────────────────────────────────────────────────────
+  # Never create a KMS key or the encryption policy
+  create_kms_key         = false
+  # ─────────────────────────────────────────────────────────────────────────────
+  # Don’t create the CloudWatch Log Group (avoids “already exists” errors)
+  create_cloudwatch_log_group = false
+  # ─────────────────────────────────────────────────────────────────────────────
+
+  # Pass your node-group map through untouched (so its create_iam_role=false flags stick)
+  eks_managed_node_groups = var.managed_node_groups
 }

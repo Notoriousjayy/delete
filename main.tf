@@ -34,7 +34,6 @@ module "eks_cluster" {
 
   managed_node_groups = {
     default = {
-      # Tell the module NOT to create/detach/attach any IAM policies
       create_iam_role          = false
       iam_role_arn             = data.aws_iam_role.eks_node_group.arn
       iam_role_use_name_prefix = false
@@ -45,4 +44,5 @@ module "eks_cluster" {
       max_size       = 1
     }
   }
+
 }
