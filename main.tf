@@ -32,6 +32,9 @@ module "eks_cluster" {
   vpc_id             = module.vpc.vpc_id
   subnet_ids         = module.vpc.private_subnets
 
+  # ← Tell the module to create (and later destroy) the control-plane IAM role
+  create_cluster_iam_role = true
+
   managed_node_groups = {
     default = {
       create_iam_role          = false
@@ -44,5 +47,4 @@ module "eks_cluster" {
       max_size       = 1
     }
   }
-
 }

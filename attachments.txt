@@ -1,2 +1,0 @@
-module.eks_cluster.module.eks.aws_iam_role_policy_attachment.cluster_encryption[0]
-module.eks_cluster.module.eks.aws_iam_role_policy_attachment.this["AmazonEKSClusterPolicy"]
